@@ -1,0 +1,79 @@
+aspect-w-16 aspect-h-9 sm:aspect-w-4 sm:aspect-h-2
+
+// <div className="bg-cover bg-center h-64 sm:h-96" style={{backgroundImage: `url(./boy.jpg)`}}>
+        // </div>
+
+
+   const foo = {
+
+      paths: mockData2.map((item)=>({
+          params:{
+              id:item.id.toString()
+              
+              
+          }
+      })),
+      
+      fallback: false // See the "fallback" section below
+    };
+    
+    console.log(foo)
+
+    return foo
+  }
+
+.svg-cover{
+    background: white;
+    backdrop-filter: blur(2rem);
+   
+    background: linear-gradient(to right bottom, rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.3));
+}
+.svg {
+    position: absolute;
+    width: calc(127% + 1.3px);
+    height: 30px;
+    bottom: 0;  
+
+}
+
+<div className="svg-cover">
+        <svg fill='url(#grad)' className="svg s overflow-hidden md:hidden z-5"data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+               <defs>
+
+                   <linearGradient id="grad" x1="0%" y1="0%" x2="0%" y2="100%">
+                       <stop offset="0" stop-color="#65dfc9" stop-opacity="1"/>
+                       <stop offset="100%" stop-color="#6cdbeb" stop-opacity="1"/>
+
+                   </linearGradient>
+               </defs>
+                <path d="M985.66,92.83C906.67,72,823.78,31,743.84,14.19c-82.26-17.34-168.06-16.33-250.45.39-57.84,11.73-114,31.07-172,41.86A600.21,600.21,0,0,1,0,27.35V120H1200V95.8C1132.19,118.92,1055.71,111.31,985.66,92.83Z" class="shape-fill"></path>
+
+            </svg>
+            </div>
+
+  {/* <ImageContainer className=" flex flex-grow h-full z-0 relative" >
+                <Image className ="image-path image bg-cover bg-center h-full w-full inset-0 transform hover:scale-125 transition:ease-out duration:500" height={500} width={1800} src = "/bckground.jpg"/>
+                <svg className="svg md:hidden"data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+                <path d="M985.66,92.83C906.67,72,823.78,31,743.84,14.19c-82.26-17.34-168.06-16.33-250.45.39-57.84,11.73-114,31.07-172,41.86A600.21,600.21,0,0,1,0,27.35V120H1200V95.8C1132.19,118.92,1055.71,111.31,985.66,92.83Z" class="shape-fill"></path>
+
+            </svg>
+            </ImageContainer>
+
+
+      
+    
+            
+    <div className="relative text-gray-900 rounded w-75 flex flex-row items-center justify-evenly md:flex-col justify-center">
+            
+          
+            <div className=" w-full shadow-sm rounded-lg z-10 p-2">
+                <h1 className="font-bold text-xl text-center">Lorem lorem lorem </h1>
+                <p className="text-center">lorem lorem lorem lorem lorem lorem lorem lorem</p>
+            </div>
+
+            <div className="w-full h-[150px]">
+            <img className=" absolute bottom-20 right-0 md:right-60 lg:right-80 md:bottom-5 md:h-[300px] z-o h-[150px] sm:h-[200px] md:bottom-0" src="./undraw.svg " />
+            </div>
+      
+            </div>
+             */}
