@@ -12,7 +12,7 @@ function ContactForm() {
                 <div className="flex md:flex-grow flex-col justify-between space-y-8">
                     <div>
                         <h1 className="text-4xl font-bold tracking-wide">Contact Us</h1>
-                        <p className="pt-2 text-cyan-100 text-sm ">You could leave us a message in the contact form below or you could message us by Whatsapp, facebook, or messenger</p>    
+                        <p className="pt-2 text-cyan-100 text-sm ">You could leave us message by filling the contact form below or you could message us by Whatsapp, facebook, or messenger</p>    
                     </div>
 
                     <CardContact/>
