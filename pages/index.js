@@ -3,11 +3,12 @@ import Link from 'next/link'
 import GridList from '../components/Grid/GridList'
 import {mockData2} from '../components/MockData/MockData'
 import CardHome from '../components/Card/CardHome'
+import CardContentWelcome from '../components/Card/CardContentWelcome'
 import NewSlider from '../components/Slider/NewSlider'
 
 export default function Home() {
   return (
-    <div className="">
+    <div >
       <Head>
         <title>Create Next App</title>
         <link rel="icon" href="/favicon.ico" />
@@ -15,7 +16,9 @@ export default function Home() {
 
 <NewSlider/>
 
-    <GridList>
+<CardContentWelcome/>
+
+    <GridList > 
       {mockData2.map(d=>(
         <Link href={`/page/${d.id}`}>
         <div key={d.id}>

@@ -6,51 +6,35 @@ function CardSocialLogo() {
     return (
         <div>
             <div className="flex items-center justify-around">
-              <div className="flex flex-row space-x-2 mr-4  items-center group ">
+            <div className="flex flex-row space-x-2 mr-0  items-center group ">
                 <FontAwesomeIcon
-                  icon={faFacebookF}
-                  className=" h-5 group-hover:animate-bounce text-teal-300 text-xl mr-2"
+                  icon={faWhatsapp}
+                  className=" h-5 group-hover:animate-bounce text-teal-500 text-xl mr-2"
                 />
                 <span className="opacity-0 group-hover:opacity-100 text-xs">
-                  Facebook
+                  WhatsApp
                 </span>
               </div>
-              <div className="flex flex-row  space-x-2 mr-4 items-center group ">
+            
+              <div className="flex flex-row  space-x-2 mr-0 items-center group ">
                 <FontAwesomeIcon
                   icon={faFacebookMessenger}
-                  className=" h-5 group-hover:animate-bounce text-teal-300 text-xl mr-2"
+                  className=" h-5 group-hover:animate-bounce text-teal-500 text-xl mr-2"
                 />
                 <span className="opacity-0 group-hover:opacity-100 text-xs">
                   Messenger
                 </span>
               </div>
-              <div className="flex flex-row  space-x-2 mr-4 items-center group ">
+              <div className="flex flex-row  space-x-2 mr-0 items-center group ">
                 <FontAwesomeIcon
                   icon={faInstagram}
-                  className=" h-5 group-hover:animate-bounce text-teal-300 text-xl mr-2"
+                  className=" h-5 group-hover:animate-bounce text-teal-500 text-xl mr-2"
                 />
                 <span className="opacity-0 group-hover:opacity-100 text-xs">
-                  Twitter
+                  Instagram
                 </span>
               </div>
-              <div className="flex flex-row  space-x-2 mr-4 items-center group ">
-                <FontAwesomeIcon
-                  icon={faTwitter}
-                  className=" h-5 group-hover:animate-bounce text-teal-300 text-xl mr-2"
-                />
-                <span className="opacity-0 group-hover:opacity-100 text-xs">
-                  Twitter
-                </span>
-              </div>
-              <div className="flex flex-row  space-x-2 mr-4 items-center group ">
-                <FontAwesomeIcon
-                  icon={faLinkedinIn}
-                  className=" h-5 group-hover:animate-bounce text-teal-300 text-xl mr-2"
-                />
-                <span className="opacity-0 group-hover:opacity-100 text-xs">
-                  Linked In
-                </span>
-              </div>
+             
         </div>
         </div>
     )

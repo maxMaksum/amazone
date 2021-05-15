@@ -3,7 +3,7 @@ function CardContent({title, description, excerpt,img}) {
     const carddescription = description? description :(`Contact Us`)
     const cardexcerpt = excerpt? excerpt :(`lorem5 lorem ll`)
 
-    console.log(img)
+  
     return (
 
       <div className="relative w-full flex flex-col">
