@@ -1,7 +1,7 @@
 import CardHome from "../../components/Card/CardHome";
 import CardProducts from "../../components/Card/CardProducts";
 import {mockData2} from '../../components/MockData/MockData'
-
+import Slider2 from "../../components/Slider/Slider2"
 export async function getStaticProps(context) {
 
     const {params} = context
@@ -28,7 +28,9 @@ export async function getStaticProps(context) {
 function pageDetail({data}) {
     console.log(data)
     return (
-        <div >
+        <div  style={{
+          backgroundImage: `url("/linen3.jpg")`}} className="">
+           <Slider2/>
            <CardProducts mockData2={data}/>
         </div>
         

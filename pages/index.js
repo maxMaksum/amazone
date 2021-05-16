@@ -8,29 +8,28 @@ import NewSlider from '../components/Slider/NewSlider'
 
 export default function Home() {
   return (
-    <div >
+    <div>
       <Head>
         <title>Create Next App</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-<NewSlider/>
+      <NewSlider />
 
-<CardContentWelcome/>
-
-    <GridList > 
-      {mockData2.map(d=>(
-        <Link href={`/page/${d.id}`}>
-        <div key={d.id}>
-          <CardHome title={d.title} url={d.image} description={d.description} excerpt={d.excerpt}/>
-          
-        </div>
-        </Link>
-      ))}
-      
-      
-    </GridList>
-    
+      <GridList>
+        {mockData2.map((d) => (
+          <Link href={`/page/${d.id}`}>
+            <div key={d.id}>
+              <CardHome
+                title={d.title}
+                url={d.image}
+                description={d.description}
+                excerpt={d.excerpt}
+              />
+            </div>
+          </Link>
+        ))}
+      </GridList>
     </div>
-  )
+  );
 }

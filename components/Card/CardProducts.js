@@ -12,6 +12,7 @@ function CardProducts({mockData2}) {
           backgroundImage: `url("/linen3.jpg")`,
         }}
       >
+       
         <div className="flex md:flex-grow flex-col justify-between space-y-8">
           <CardContentServices mockData2={mockData2} />
           <CardSocial />

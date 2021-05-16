@@ -4,6 +4,22 @@ aspect-w-16 aspect-h-9 sm:aspect-w-4 sm:aspect-h-2
         // </div>
 
 
+.slick-arrow, .slick-prev,
+.slick-arrow, .slick-next{
+    background:yellow;
+    z-index:100;
+    width:47px;
+    height: 104px;
+
+}
+
+.slick-prev::before, .slick-next::before{
+    display:none
+}
+
+
+
+
    const foo = {
 
       paths: mockData2.map((item)=>({

@@ -11,7 +11,7 @@ function Layout({children}) {
             </div>
             <div style={{
             backgroundImage: `url("/linen3.jpg")`}} className="fixed bottom-0 left-0 z-50 w-full flex items-center justify-center p-2">
-               <div className="glass2 mx-2 py-2 px-6 w-full">
+               <div className="glass2 mx-2 py-2 px-6 w-full rounded">
                 <CardSocialLogo />
                 </div>
             </div>

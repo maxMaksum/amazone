@@ -2,7 +2,7 @@ import {useState} from 'react'
 import Link from'next/link'
 import Image from 'next/image'
 import HeaderItems from './HeaderItems'
-
+import HeaderItemsPng from './HeaderItemsPng'
 import { faHome, faEnvelope, faUsers, faEllipsisV } from '@fortawesome/free-solid-svg-icons'
 import { faWhatsapp, faFacebookF,faFacebookMessenger } from '@fortawesome/free-brands-svg-icons'
 import HeaderMenuSmall from './HeaderMenuSmall'
@@ -11,27 +11,31 @@ function Header() {
     const [open, setOpen] = useState(false)
     const hanldeClick = ()=> setOpen(!open)
     return (
-      <div className="h-100 w-100 fixed inset-x-0 z-50">
-        <div className="relative bg-green-600 h-16 flex flex-col justify-center">
-          <header className="glass2 flex flex-row  justify-around items-center h-auto">
+      <div className="h-100 w-full fixed inset-x-0 z-50 p-2"  style={{
+        backgroundImage: `url("/linen3.jpg")`
+      }} >
+        <div className="relative bg-teal-500 h-18 flex flex-col w-full p-2">
 
-            <div className="flex flex-grow justify-start items-center">
+          <header className="glass2 flex flex-row  justify-around items-center h-auto  rounded pt-2">
+
+<div className="w-full flex flex-grow items-center">
+            <div className="flex items-center w-full">
               <Link href="/">
-                <a>
-                  <div className="flex justify-evenly items-center ">
-                    <div className="flex flex-col justify-center group">
+                <a className="w-full flex flex-row  items-center justify-start group">
+                  
+                    <div className="ml-2">
                       <Image
-                        className="object-contain"
+                        className="bg-cover bg-center hover:animate-bounce text-gray-50"
                         src="/logo.png"
-                        width={50}
-                        height={50}
+                        width={40}
+                        height={40}
                       />
+                    
                     </div>
-
-                    <p className="ml-2 text-gray-50 italic ">BALIJAVASPIRIT</p>
-                  </div>
+                      <p className="text-gray-500 italic  text-sm ml-2 ">BALIJAVA SPIRIT</p>
                 </a>
               </Link>
+              </div>
 
               <div className="flex justify-start items-center invisible sm:visible ml-4">
                 <Link href="/page/5">
@@ -48,13 +52,20 @@ function Header() {
             </div>
 
             <div className="flex justify-start items-center pr-2">
+            <HeaderItems title="Whatsapp" icon={faWhatsapp} />
+            
+             
+              <Link href="/page/2">
+                <a>
+                <HeaderItemsPng title="Services" icon={'/cotton.png'} />
+                </a>
+              </Link>
+
               <Link href="/">
                 <a>
                   <HeaderItems title="Home" icon={faHome} />
                 </a>
               </Link>
-              <HeaderItems title="Whatsapp" icon={faWhatsapp} />
-              <HeaderItems title="Facebook" icon={faFacebookF} />
            
 
               <div onClick={hanldeClick} className="visible sm:invisible">
@@ -81,6 +92,8 @@ function Header() {
                   <HeaderMenuSmall title="Contact" icon={faEnvelope} />
                 </a>
               </Link>
+
+              <HeaderMenuSmall title="Facebook" icon={faFacebookF} />
             </div>
           )}
         </div>

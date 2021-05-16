@@ -14,7 +14,7 @@ function Hero({homedata}) {
         backgroundImage: `url("./linen.jpg")` 
       }}>
       
-        <div className ="glass relative z-20 flex flex-col md:flex-row rounded p-2 h-100 ">
+        <div className ="glass relative z-20 flex flex-col md:flex-row rounded p-2 h-96 ">
         
             <CardImageHome img={homedata.image} id={homedata.id} className="flex md:flex-grow w-full" />
             <CardContent title={homedata.title} excerpt={homedata.excerpt}/>
