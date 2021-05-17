@@ -87,9 +87,9 @@ function Slider2() {
 
     <Slider {...settings} className="w-full">
     {mockData2.map((homedata)=>(
-     <div id={homedata.id}  className="z-0 p-2flex flex-col items-center justify-center"  style={{
+     <div id={homedata.id}  className="z-0 p-2 flex flex-col items-center justify-center"  style={{
       backgroundImage: `url("/linen3.jpg")`}} >
-       <div className=" m-2 bg-teal-300 flex flex-col items-center justify-center">
+       <div className=" m-2 bg-teal-500 flex flex-col items-center justify-center">
        <MyImage url ={homedata.image}  className="w-100 z-0"/>
        <CardContentWelcome excerpt={homedata.excerpt}/>
        </div>

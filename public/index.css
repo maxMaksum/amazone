@@ -14,7 +14,7 @@
 
 .glass2{
     background:black;
-    opacity:0.8;
+    opacity:0.6;
     backdrop-filter: blur(2rem);
     background: linear-gradient(to right bottom, rgba(255, 255, 255, 0.4), rgba(255, 255, 255, 0.1));
 }

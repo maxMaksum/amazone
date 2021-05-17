@@ -5,9 +5,9 @@ function ContactForm() {
 
     return (
 
-        <div className="flex w-full min-h-screen justify-center items-center sm:p-12 p-8 rounded"> 
+        <div className="flex w-full min-h-screen justify-center items-center sm:p-12 p-4 rounded mt-2"> 
         <div className="">
-            <div className="flex flex-col md:flex-row md:space-x-6 md:space-y-6 space-y-6 bg-teal-700 w-full max-w-4xl p-8 rounded-xl shadow-lg text-gray-50 overflow-hidden">
+            <div className="flex flex-col md:flex-row md:space-x-6 md:space-y-6 space-y-6 bg-teal-500 w-full max-w-4xl p-4 rounded-xl shadow-lg text-gray-50 overflow-hidden">
 
                 <div className="flex md:flex-grow flex-col justify-between space-y-8">
                     <div>
@@ -19,12 +19,13 @@ function ContactForm() {
                     <CardSocial/>
                 </div>
 
-                <div className="relative z-10">
-                    <div className="absolute z-0 w-40 h-40 bg-teal-400 rounded-full -right-28 -top-28 z-0"></div>
-                    <div className="absolute z-0 w-40 h-40 bg-teal-400 rounded-full -left-28 -bottom-16 z-5"></div>
-                    <div className="glass2 p-6 rounded">
-                    <div className="relative z-10 bg-gray-50 rounded-xl shadow-lg p-8 text-gray-700 md:w-80 ">
-                        <form className="flex flex-col space-y-4">
+                <div className="relative">
+                    
+                    <div style={{
+        backgroundImage: `url("/linen3.jpg")`}} className="p-6 rounded z-10 relative">
+           
+                    <div   className="relative z-20 rounded-xl shadow-lg p-8 text-gray-700 md:w-80 ">
+                        <form className="flex flex-col space-y-4 z-10">
                             <div>
                                 <label for="" className="text-sm "> Your Name </label>
                           
