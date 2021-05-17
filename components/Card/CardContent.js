@@ -19,7 +19,7 @@ function CardContent({title, description, excerpt,img}) {
          
         </div>
 
-      <img className="absolute bottom-0 right-0 h-40" src={`/cotton2.png`} />
+      {/* <img className="absolute bottom-0 right-0 h-40" src={`/cotton2.png`} /> */}
 
        
       </div>

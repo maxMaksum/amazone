@@ -26,10 +26,9 @@ export async function getStaticProps(context) {
     };
   }
 function pageDetail({data}) {
-    console.log(data)
     return (
         <div  style={{
-          backgroundImage: `url("/linen3.jpg")`}} className="">
+          backgroundImage: `url("/linen3.jpg")`}} className="w-full h-full">
            <Slider2/>
            <CardProducts mockData2={data}/>
         </div>

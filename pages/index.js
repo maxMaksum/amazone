@@ -8,7 +8,7 @@ import NewSlider from '../components/Slider/NewSlider'
 
 export default function Home() {
   return (
-    <div>
+    <div className="mx-0 w-screen h-full">
       <Head>
         <title>Create Next App</title>
         <link rel="icon" href="/favicon.ico" />

@@ -1,4 +1,3 @@
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 function HeaderItemsPng({title, icon, flexDir="flex-col" }) {
     return (

@@ -3,6 +3,11 @@ aspect-w-16 aspect-h-9 sm:aspect-w-4 sm:aspect-h-2
 // <div className="bg-cover bg-center h-64 sm:h-96" style={{backgroundImage: `url(./boy.jpg)`}}>
         // </div>
 
+ {/* <div className="absolute z-0 w-32 h-32 rounded-full -right-10 -top-10">
+             <img src='/cotton.png' className=" h-full w-full group-hover:animate-bounce text-teal-500"/>
+        </div>
+        <div className="absolute bg-teal-500   z-0 w-32 h-32 rounded-full -left-10 -bottom-10"></div> */}
+
 
 .slick-arrow, .slick-prev,
 .slick-arrow, .slick-next{

@@ -87,9 +87,9 @@ function Slider2() {
 
     <Slider {...settings} className="w-full">
     {mockData2.map((homedata)=>(
-     <div id={homedata.id}  className="z-0 flex flex-col items-center justify-center"  style={{
-      backgroundImage: `url("/linen3.jpg")`}} className="">
-       <div className=" m-2">
+     <div id={homedata.id}  className="z-0 p-2flex flex-col items-center justify-center"  style={{
+      backgroundImage: `url("/linen3.jpg")`}} >
+       <div className=" m-2 bg-teal-300 flex flex-col items-center justify-center">
        <MyImage url ={homedata.image}  className="w-100 z-0"/>
        <CardContentWelcome excerpt={homedata.excerpt}/>
        </div>
@@ -109,7 +109,7 @@ export default Slider2
 
 function MyImage({url}){
   return(
-    <div  className="h-48 p-2">
+    <div  className="">
         <img src={url} className="object-contain object-center w-full z-0"/>
     </div>
   )

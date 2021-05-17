@@ -7,7 +7,7 @@ function CardProducts({mockData2}) {
   
     return (
       <div
-        className="flex w-full min-h-screen justify-center items-center"
+        className="flex w-full justify-center items-center"
         style={{
           backgroundImage: `url("/linen3.jpg")`,
         }}

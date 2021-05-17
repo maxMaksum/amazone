@@ -32,7 +32,7 @@ function Header() {
                       />
                     
                     </div>
-                      <p className="text-gray-500 italic  text-sm ml-2 ">BALIJAVA SPIRIT</p>
+                      <p className="text-gray-50 italic text-center  text-xs ml-2 w-full ">BALIJAVA SPIRIT</p>
                 </a>
               </Link>
               </div>
