@@ -9,12 +9,19 @@ module.exports = {
         colors: {
           // Configure your color palette here
           'cyan': colors.cyan,
-          'teal' :colors.teal
+          'teal' :colors.teal,
+          amazon_blue:{
+            light:"#232f3e",
+            blue:"#131"
+          }
         }
+
     },
   },
 
   plugins: [
     require('@tailwindcss/aspect-ratio'),
+    
+    require('@tailwindcss/line-clamp'),
   ],
 }

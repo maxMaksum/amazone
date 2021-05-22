@@ -1,35 +1,51 @@
 import Head from 'next/head'
 import Link from 'next/link'
-import GridList from '../components/Grid/GridList'
-import {mockData2} from '../components/MockData/MockData'
-import CardHome from '../components/Card/CardHome'
-import CardContentWelcome from '../components/Card/CardContentWelcome'
-import NewSlider from '../components/Slider/NewSlider'
+import Banner from '../components/Banner'
+import Header from '../components/Header'
+import ProductFeed from '../components/ProductFeed'
+import {dummyData} from '../Response'
+export default function Home({data}) {
+  console.log(data)
 
-export default function Home() {
   return (
-    <div className="mx-0 w-screen h-full">
+    
+    <div className="bg-gray-50">
       <Head>
-        <title>Create Next App</title>
-        <link rel="icon" href="/favicon.ico" />
+        <title>Amazon 2.0</title>
       </Head>
 
-      <NewSlider />
-
-      <GridList>
-        {mockData2.map((d) => (
-          <Link href={`/page/${d.id}`}>
-            <div key={d.id}>
-              <CardHome
-                title={d.title}
-                url={d.image}
-                description={d.description}
-                excerpt={d.excerpt}
-              />
-            </div>
-          </Link>
-        ))}
-      </GridList>
+      <div>
+        <Header/>
+        <main className="max-w-screen-2xl mx-auto">
+          {/* banner */}
+          <Banner/>
+          {/* products & feed */}
+          <ProductFeed products={data}/>
+        </main>
+     
+        
+      </div>
     </div>
   );
 }
+
+
+export async function getServerSideProps(contex){
+
+   const useDummyData = false
+   let res =""
+   res = useDummyData? dummyData : await fetch(`https://fakestoreapi.com/products`).then(res=>res.json())
+
+  const data =res
+
+
+ 
+
+  return{
+      props:{
+          data
+      }
+  }
+}
+
+// https://fakestoreapi.com/docs
