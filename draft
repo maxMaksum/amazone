@@ -1,5 +1,7 @@
 aspect-w-16 aspect-h-9 sm:aspect-w-4 sm:aspect-h-2
 
+"https://links.papareact.com/f90"
+
 // <div className="bg-cover bg-center h-64 sm:h-96" style={{backgroundImage: `url(./boy.jpg)`}}>
         // </div>
 
@@ -17,6 +19,10 @@ aspect-w-16 aspect-h-9 sm:aspect-w-4 sm:aspect-h-2
     height: 104px;
 
 }
+
+https://console.developers.google.com/apis/credentials/oauthclient/52884282506-71c62ecrcvp7de3gn20lsld3qrb89as2.apps.googleusercontent.com?project=52884282506
+
+http://localhost:3000/api/auth/callback/google
 
 .slick-prev::before, .slick-next::before{
     display:none

@@ -1,12 +1,23 @@
 import Image from 'next/image'
 import {MenuIcon, SearchIcon, ShoppingCartIcon} from '@heroicons/react/outline'
+import {signIn, signOut, useSession} from 'next-auth/client'
+import {useRouter} from 'next/router'
+import {useSelector} from 'react-redux'
+import {selectItems} from '../redux/slices'
+
 function Header() {
+
+  const [ session, loading ] = useSession()
+  const router = useRouter()
+ 
+  const items = useSelector (selectItems)
     return (
-      <header>
+      <header className="sticky top-0 z-50">
         {/* top header */}
         <div className="flex items-center bg-gray-700 p-1 py-2 space-x-4">
           <div className="mt-2 flex items-center flex-grow sm:flex-grow-0">
             <Image
+            onClick={()=>router.push('/')}
               src="https://links.papareact.com/f90"
               width={"80"}
               height={"80"}
@@ -28,16 +39,16 @@ function Header() {
           {/* right */}
          <div className="flex justify-end md:justify-start flex-grow  flex-wrap max-w-[300px] sm:max-w-[350px]  md:max-w-[450px]">
               <div className=" flex items-center flex-grow  lg:w-24 text-white  text-xs space-x-4">
-            <div className="link">
-              <p>Hello Max Maksum</p>
+            <div onClick={!session ? signIn: signOut} className="link">
+              <p>{session ?`Hello ${session.user.name}`:"Sign In"}</p>
               <p className="font-extrabold md:text-sm">Account & List</p>
             </div>
             <div className="link">
               <p>Return</p>
               <p className="font-extrabold md:text-sm"> &Orders</p>
             </div>
-            <div className="link relative flex items-center">
-                <span className="absolute top-0 -right-1 sm:-right-1 bg-yellow-400 rounded-full h-4 w-4 text-center font-bold text-black">0</span>
+            <div   onClick={()=>router.push('/checkout')}className="link relative flex items-center">
+                <span className="absolute top-0 -right-1 sm:-right-1 bg-yellow-400 rounded-full h-4 w-4 text-center font-bold text-black">{items.length}</span>
               <ShoppingCartIcon className="h-8" />
               <p className="hidden md:inline font-extrabold md:text-sm mt-2">Basket</p>
             </div>

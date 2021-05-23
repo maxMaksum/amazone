@@ -2,14 +2,18 @@ import { StarIcon } from '@heroicons/react/outline'
 import Image from 'next/image'
 import { useState } from 'react'
 import Currency from 'react-currency-formatter';
+import {addBasket} from '../redux/slices'
+import {useDispatch} from 'react-redux'
 
 const upper=25;
 const lower=20;
 
-let myRandom =Math.floor(Math.random()*(upper-lower +1))
+
+
 
 function Product({id, title, price, description, category, image}) {
 
+    const dispatch = useDispatch()
     const [ratings] = useState(
         Math.floor(Math.random()*(upper-lower +1))
     )
@@ -17,6 +21,13 @@ function Product({id, title, price, description, category, image}) {
     const [hasPrime] = useState(
         Math.random()<0.5
     )
+
+    const addItemsToBasket = () =>{
+
+        const products ={id, title, price, description, category, image,hasPrime,ratings};
+        console.log("added to basket")
+        dispatch(addBasket(products))
+    }
     return (
         <div className="relative flex flex-col m-5 bg-white z-30 p-10">
             <p className="absolute top-2 right-2 text-xs italic text-gray-400">{category}</p>
@@ -33,11 +44,9 @@ function Product({id, title, price, description, category, image}) {
                 .fill()
                 .map((_, i)=>(
                     
-                    <StarIcon 
-
-                    key={i} 
-                    
-                    className="h-5 text-yellow-400"/>
+                    <div key={i} >
+                    <StarIcon key={i} className="h-5 text-yellow-400"/>
+                    </div>
                 ))}
             </div>
             <p className="text-xs my-2 line-clamp-2">{description}</p>
@@ -50,12 +59,12 @@ function Product({id, title, price, description, category, image}) {
             </div>
 
             {hasPrime&&(
-                <div className="flex lg:flex-col lg:mb-10 items-center space-x-2 -mt-5">
-                    <img src="/prime-tag.png" Alt=""/>
-                    <p>FREE NextT-day Delivery</p>
+                <div className="flex items-center space-x-2 -mt-5">
+                    <img src="/prime-tag.png" alt=""/>
+                    <p className ="lg:text-xs">FREE Next-day Delivery</p>
                 </div>
             )}
-            <button className="mx-auto btn">Add To Busket</button>
+            <button onClick={addItemsToBasket} className="mx-auto btn">Add To Busket</button>
 
         </div>
     )

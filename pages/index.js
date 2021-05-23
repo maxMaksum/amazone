@@ -5,7 +5,7 @@ import Header from '../components/Header'
 import ProductFeed from '../components/ProductFeed'
 import {dummyData} from '../Response'
 export default function Home({data}) {
-  console.log(data)
+
 
   return (
     
