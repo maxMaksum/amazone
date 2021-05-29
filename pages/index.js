@@ -1,3 +1,4 @@
+import { getSession } from 'next-auth/client'
 import Head from 'next/head'
 import Link from 'next/link'
 import Banner from '../components/Banner'
@@ -30,8 +31,8 @@ export default function Home({data}) {
 }
 
 
-export async function getServerSideProps(contex){
-
+export async function getServerSideProps(context){
+  const session = await getSession(context);
    const useDummyData = false
    let res =""
    res = useDummyData? dummyData : await fetch(`https://fakestoreapi.com/products`).then(res=>res.json())
@@ -43,7 +44,8 @@ export async function getServerSideProps(contex){
 
   return{
       props:{
-          data
+          data,
+          session
       }
   }
 }

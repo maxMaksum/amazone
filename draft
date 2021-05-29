@@ -1,5 +1,24 @@
 aspect-w-16 aspect-h-9 sm:aspect-w-4 sm:aspect-h-2
 
+return db.collection('users')
+    .doc(session.metadata.email)
+    .collection('orders')
+    .doc(session.id)
+    .set({
+        amount :session.amount_total/100,
+        amount_shipping:session.total_details.amount_shipping/100,
+        images:Json.parse(session.metadata.images),
+        timestamp:admin.firestore.FieldValue.serverTimestamp()
+       
+
+    }) .then(()=>{
+        console.log(`SUCCESS: Order ${session.id} had been added to firebase`)
+    })
+
+
+
+
+
 "https://links.papareact.com/f90"
 
 // <div className="bg-cover bg-center h-64 sm:h-96" style={{backgroundImage: `url(./boy.jpg)`}}>

@@ -9,6 +9,8 @@ function Header() {
 
   const [ session, loading ] = useSession()
   const router = useRouter()
+
+
  
   const items = useSelector (selectItems)
     return (
@@ -43,7 +45,7 @@ function Header() {
               <p>{session ?`Hello ${session.user.name}`:"Sign In"}</p>
               <p className="font-extrabold md:text-sm">Account & List</p>
             </div>
-            <div className="link">
+            <div onClick={()=>session&&router.push('/orders')}className="link">
               <p>Return</p>
               <p className="font-extrabold md:text-sm"> &Orders</p>
             </div>

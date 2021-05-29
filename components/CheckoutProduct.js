@@ -25,8 +25,7 @@ const removeItemFromBasket = ()=>{
 }
     return (
       <div>
-        <div></div>
-        <button></button>
+       
 
       
           <div className="grid grid-cols-5">
