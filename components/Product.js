@@ -61,7 +61,7 @@ function Product({id, title, price, description, category, image}) {
             {hasPrime&&(
                 <div className="flex items-center space-x-2 -mt-5">
                     <img src="/prime-tag.png" alt=""/>
-                    <p className ="lg:text-sm">FREE Next-day Delivery</p>
+                    <p className ="lg:text-xs">FREE Next-day Delivery</p>
                 </div>
             )}
             <button onClick={addItemsToBasket} className="mx-auto btn">Add To Busket</button>
