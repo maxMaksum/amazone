@@ -33,7 +33,7 @@ function Banner() {
       <div className=" flex max-h-64 relative">
         <div className="hidden sm:flex flex-grow bg-teal-500 max-w-[600px] relative">
           <div className=" flex items-center justify-center flex-grow ">
-            Hello World..Awesome
+            Hello World..Never Give Up, KAIZEN
             <div className="z-10 bg-teal-500 p-6 h-full w-3 transform skew-x-6 absolute -right-5 top-0 "></div>
             </div>
           
