@@ -6,10 +6,6 @@ apiVersion :'2020-08-27'
 
 // const stripe = require("stripe")(process.env.STRIPE_SECRET_KEY)
 
-const HOST = process.env.HOST_URL
-
-console.log(HOST)
-
 export default async (req, res) => {
  const {items, email} = req.body
  console.log('ok ok ok')
@@ -56,5 +52,5 @@ export default async (req, res) => {
 
 
  console.log( "hey")
- res.status(200).json({sessionId:session.id})
+ res.status(200).json({id:session.id})
 }
