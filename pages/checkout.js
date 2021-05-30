@@ -6,67 +6,43 @@ import CheckoutProduct from "../components/CheckoutProduct";
 import { useSession} from 'next-auth/client'
 import Currency from 'react-currency-formatter';
 import axios from 'axios'
-
+import {useState} from 'react'
 import {  loadStripe } from '@stripe/stripe-js';
 
 
 let stripePromise = loadStripe(process.env.NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY)
 
-// const getStripe = () => {
-//   if (!stripePromise) {
-//     stripePromise = loadStripe(process.env.NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY)
-//   }
-//   return stripePromise
-// }
-
 
 function checkout() {
-
     const items = useSelector (selectItems)
     const total = useSelector (selectTotal)
     const [session] =useSession()
   
 
     const createCheckoutSession = async (event)=>{
-
         event.preventDefault()
-        
+    
         const stripe = await stripePromise
 
-        const checkoutSession = await axios.post( '/api/create-checkout-session', {
-            items:items,
-            email:session.user.email,
-          })
-
+        const newsession  = await fetch('/api/create-checkout-session',{
+        method:'POST',
+        headers: {
+          'content-type': 'application/json'
+        },
+        body: JSON.stringify({
+          items:items,
+          email:session.user.email,
+        })
+        }).then(res=>res.json())
+       
         const result = await stripe.redirectToCheckout({
-          // Make the id field from the Checkout Session creation API response
-          // available to this file, so you can provide it as parameter here
-          // instead of the {{CHECKOUT_SESSION_ID}} placeholder.
-          sessionId : checkoutSession.data.id
+         
+          sessionId:newsession.session.id
         })
 
-        if (result.error){
-          alert(result.error)
-        }
-        // const {sessionId} = await fetch('/api/create-checkout-session',{
-        // method:'POST',
-        // headers: {
-        //   'content-type': 'application/json'
-        // },
-        // body: JSON.stringify({
-        //   items:items,
-        //   email:session.user.email,
-        // })
-        // }).then(res=>res.json())
-       
-       
+        if (result.error) alert(result.error)
         
-        // const { error } = await stripe.redirectToCheckout({
-          // Make the id field from the Checkout Session creation API response
-          // available to this file, so you can provide it as parameter here
-          // instead of the {{CHECKOUT_SESSION_ID}} placeholder.
-        //   sessionId,
-        // })
+        console.log(newsession.session.id)
   
     }
     return (
