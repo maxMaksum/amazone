@@ -4,9 +4,15 @@ const stripe = new Stripe (process.env.STRIPE_SECRET_KEY,{
 apiVersion :'2020-08-27'
 })
 
+// const stripe = require("stripe")(process.env.STRIPE_SECRET_KEY)
+
+const HOST = process.env.HOST_URL
+
+console.log(HOST)
+
 export default async (req, res) => {
  const {items, email} = req.body
- console.log('ok')
+ console.log('ok ok ok')
 //  console.log(items)
 //  console.log(email)
 
@@ -29,8 +35,8 @@ export default async (req, res) => {
   
  const session = await stripe.checkout.sessions.create({
     payment_method_types: ['card'],
-    success_url:`http://localhost:3000/success`,
-    cancel_url:`http://localhost:3000/checkout`,
+    success_url:`${process.env.HOST_URL}/success`,
+    cancel_url:`${process.env.HOST_URL}/checkout`,
 
     shipping_rates:["shr_1Iv0b9HYscoMhSgNI5qr9OYm",],
     shipping_address_collection:{

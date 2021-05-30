@@ -16,7 +16,7 @@ function success() {
                         Thank you, Your order has been confirmed
                     </h1>
                 </div>
-                <p> Thank you for shopping with us. We will send confirmation when the items has been shipped, if you would like to check the status of the order(s), please press the link below.
+                <p> Thank you for shopping with Maxgit. We will send confirmation when the items has been shipped, if you would like to check the status of the order(s), please press the link below.
             
                 </p>
                 <button onClick={()=>router.push('/orders')} className="btn mt-8">Go to my order(s)</button>
