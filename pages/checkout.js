@@ -24,7 +24,7 @@ function checkout() {
     
         const stripe = await stripePromise
 
-        const newsession  = await fetch(`https://amazone-clone-45x9f744l-maxmaksum.vercel.app/api/create-checkout-session`,{
+        const newsession  = await fetch(`api/create-checkout-session`,{
         method:'POST',
         headers: {
           'content-type': 'application/json'
