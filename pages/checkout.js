@@ -10,14 +10,14 @@ import axios from 'axios'
 import {  loadStripe } from '@stripe/stripe-js';
 
 
-let stripePromise
+let stripePromise = loadStripe(process.env.NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY)
 
-const getStripe = () => {
-  if (!stripePromise) {
-    stripePromise = loadStripe(process.env.NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY)
-  }
-  return stripePromise
-}
+// const getStripe = () => {
+//   if (!stripePromise) {
+//     stripePromise = loadStripe(process.env.NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY)
+//   }
+//   return stripePromise
+// }
 
 
 function checkout() {
@@ -31,7 +31,7 @@ function checkout() {
 
         event.preventDefault()
         
-        const stripe = await getStripe()
+        const stripe = await stripePromise
 
         const checkoutSession = await axios.post( '/api/create-checkout-session', {
             items:items,
