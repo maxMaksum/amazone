@@ -4,7 +4,7 @@ module.exports = {
         domains: ['media.graphcms.com', 'fakestoreapi.com', "links.papareact.com"],
       },
 
-    // env: {stripe_public_key:process.env.STRIPE_PUBLIC_KEY }
+    // env: {stripe_public_key:process.env.NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY }
 
       
   }

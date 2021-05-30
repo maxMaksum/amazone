@@ -10,7 +10,7 @@ import {useState} from 'react'
 import {  loadStripe } from '@stripe/stripe-js';
 
 
-let stripePromise = loadStripe(process.env.NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY)
+let stripePromise = loadStripe('pk_test_51IuWObHYscoMhSgN3hRHUq7weLNwqFUfQZF7oFZFrD5DAHovx5N6XwFVbRN8sN1NZ60kz0i7OakbyEevCGmXIiKP00O1Pt65ic')
 
 
 function checkout() {
@@ -24,7 +24,7 @@ function checkout() {
     
         const stripe = await stripePromise
 
-        const newsession  = await fetch('/api/create-checkout-session',{
+        const newsession  = await fetch(`/api/create-checkout-session`,{
         method:'POST',
         headers: {
           'content-type': 'application/json'
