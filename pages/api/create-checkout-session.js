@@ -27,8 +27,8 @@ export default async (req, res) => {
 
 try{
     const session = await stripe.checkout.sessions.create({
-        success_url:`${process.env.HOST_URL}/success`,
-        cancel_url:`${process.env.HOST_URL}/checkout`,
+        success_url:`${req.headers.origin}/success`,
+        cancel_url:`${req.headers.origin}/checkout`,
         payment_method_types: ['card'],
         mode:'payment',
     

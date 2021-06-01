@@ -10,8 +10,7 @@ import {useState} from 'react'
 import {  loadStripe } from '@stripe/stripe-js';
 
 
-let stripePromise = loadStripe(`${process.env.
-  NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY}`)
+let stripePromise = loadStripe(process.env.NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY)
 
 
 function checkout() {
